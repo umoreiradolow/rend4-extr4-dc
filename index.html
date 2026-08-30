@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Acervo Renda Extra no Lar - 11 Métodos Práticos para Donas de Casa</title>
+    <meta name="description" content="Descubra 11 métodos práticos e validados para gerar renda extra direto de casa sem abrir mão de cuidar da sua família e dos seus filhos." />
+    
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'warm-white': '#FAF8F5',
+              'brand-pink': '#F23870',
+              'brand-pink-light': '#FFE5ED',
+              'brand-teal': '#47C6C4',
+              'brand-teal-dark': '#00A896',
+              'brand-teal-light': '#EBF8F7',
+              'brand-dark': '#202020',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+      .card-clean-shadow {
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+      }
+      .btn-primary-yellow {
+        background: linear-gradient(180deg, #FFDF00 0%, #FBBF24 100%);
+        color: #202020;
+        border: 2px solid #D97706;
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.35);
+      }
+      .btn-primary-yellow:hover {
+        background: linear-gradient(180deg, #FFE838 0%, #F59E0B 100%);
+        transform: translateY(-2px);
+      }
+      @keyframes gentle-sway {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+      .animate-gentle-sway {
+        animation: gentle-sway 3s ease-in-out infinite;
+      }
+
+      /* Alternating Ebook Cards Animation */
+      @keyframes swap-card-left {
+        0%, 42% {
+          transform: translateX(0) rotate(-2deg) scale(1.02);
+          z-index: 25;
+          opacity: 1;
+          filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.18));
+        }
+        48% {
+          transform: translateX(-24px) rotate(-6deg) scale(0.96);
+          z-index: 25;
+        }
+        52% {
+          transform: translateX(-16px) rotate(-4deg) scale(0.94);
+          z-index: 10;
+          opacity: 0.9;
+        }
+        58%, 92% {
+          transform: translateX(18px) rotate(-1deg) scale(0.94);
+          z-index: 10;
+          opacity: 0.88;
+          filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.10));
+        }
+        98%, 100% {
+          transform: translateX(0) rotate(-2deg) scale(1.02);
+          z-index: 25;
+          opacity: 1;
+          filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.18));
+        }
+      }
+
+      @keyframes swap-card-right {
+        0%, 42% {
+          transform: translateX(-18px) rotate(1deg) scale(0.94);
+          z-index: 10;
+          opacity: 0.88;
+          filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.10));
+        }
+        48% {
+          transform: translateX(24px) rotate(6deg) scale(0.96);
+          z-index: 10;
+        }
+        52% {
+          transform: translateX(16px) rotate(4deg) scale(0.98);
+          z-index: 25;
+          opacity: 1;
+        }
+        58%, 92% {
+          transform: translateX(0) rotate(2deg) scale(1.02);
+          z-index: 25;
+          opacity: 1;
+          filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.18));
+        }
+        98%, 100% {
+          transform: translateX(-18px) rotate(1deg) scale(0.94);
+          z-index: 10;
+          opacity: 0.88;
+          filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.10));
+        }
+      }
+
+      .animate-swap-a {
+        animation: swap-card-left 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        will-change: transform, z-index, opacity;
+      }
+      .animate-swap-b {
+        animation: swap-card-right 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        will-change: transform, z-index, opacity;
+      }
+      .animate-swap-c {
+        animation: swap-card-left 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        animation-delay: -2.75s;
+        will-change: transform, z-index, opacity;
+      }
+      .animate-swap-d {
+        animation: swap-card-right 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        animation-delay: -2.75s;
+        will-change: transform, z-index, opacity;
+      }
+
+      .card-preview-item {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .card-preview-item:hover,
+      .card-preview-item.active-front {
+        animation-play-state: paused !important;
+        z-index: 40 !important;
+        transform: scale(1.06) rotate(0deg) !important;
+        opacity: 1 !important;
+        filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.25)) !important;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-[#FAF8F5] text-[#202020] font-body selection:bg-[#F23870] selection:text-white antialiased">
+    
+    <!-- 1. HERO SECTION -->
+    <section class="max-w-xl mx-auto px-5 pt-8 pb-10">
+      <h1 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#202020] leading-snug mb-4 tracking-tight">
+        <span class="bg-[#F23870] text-white px-2.5 py-0.5 rounded-lg inline-block">11 métodos práticos</span> para gerar renda extra direto de casa sem abandonar sua família.
+      </h1>
+      
+      <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-6 font-normal">
+        Você não precisa trabalhar fora, deixar seus filhos com terceiros ou investir rios de dinheiro. Por menos de <strong>0,66 centavos por dia</strong>, tenha o passo a passo completo para lucrar com o que você já sabe fazer no seu próprio ritmo.
+      </p>
+
+      <!-- Hero Banner Image -->
+      <div class="rounded-2xl overflow-hidden border border-[#FFE5ED] card-clean-shadow bg-white mb-5">
+        <img src="assets/herodonas.jpg" alt="Mulher empreendendo de casa com os filhos e o celular" class="w-full h-auto object-cover">
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="space-y-2.5">
+        <div class="bg-[#FFE5ED]/60 p-3.5 rounded-xl border border-[#F23870]/20 flex items-center justify-center gap-2 text-xs sm:text-sm text-[#202020] font-semibold text-center animate-gentle-sway shadow-xs">
+          <!-- WhatsApp Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#25D366] shrink-0"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>
+          <span>Chega na hora no seu WhatsApp e E-mail</span>
+        </div>
+
+        <div class="bg-white/80 p-3 rounded-xl border border-[#47C6C4]/30 flex items-center justify-center gap-2 text-xs sm:text-sm text-[#202020] font-medium text-center shadow-xs">
+          <!-- Printer Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00A896] shrink-0"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
+          <span>Pode imprimir ou usar a versão digital</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PAIN AGITATION SECTION -->
+    <section class="bg-[#FFE5ED] py-12 px-5 border-t border-b border-[#F23870]/15">
+      <div class="max-w-xl mx-auto">
+        <div class="bg-white p-5 sm:p-6 rounded-2xl border-2 border-[#F23870] card-clean-shadow mb-8">
+          <p class="text-base sm:text-lg font-bold text-[#202020] leading-snug">
+            É angustiante ver as contas apertando no fim do mês ou depender financeiramente de terceiros sem poder sair para trabalhar fora porque você tem uma casa e filhos para cuidar...
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Card 1 -->
+          <div class="bg-white p-5 rounded-xl border border-[#F23870]/20 card-clean-shadow flex items-start gap-4">
+            <div class="w-8 h-8 rounded-lg bg-[#FFE5ED] text-[#F23870] font-bold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">01</div>
+            <div>
+              <h3 class="font-heading font-bold text-base text-[#202020] mb-1">Rotina doméstica puxada e sem tempo livre</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Cuidar dos filhos, da comida e da casa já consome quase todo o seu dia. Empregos tradicionais exigem 8h fora de casa que você simplesmente não tem como doar.</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white p-5 rounded-xl border border-[#F23870]/20 card-clean-shadow flex items-start gap-4">
+            <div class="w-8 h-8 rounded-lg bg-[#FFE5ED] text-[#F23870] font-bold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">02</div>
+            <div>
+              <h3 class="font-heading font-bold text-base text-[#202020] mb-1">Falta de dinheiro próprio e dependência</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Ter que pedir dinheiro para comprar um presente, pagar uma conta pessoal ou fazer um agrado para si mesma desgasta sua autoestima dia após dia.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white p-5 rounded-xl border border-[#F23870]/20 card-clean-shadow flex items-start gap-4">
+            <div class="w-8 h-8 rounded-lg bg-[#FFE5ED] text-[#F23870] font-bold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">03</div>
+            <div>
+              <h3 class="font-heading font-bold text-base text-[#202020] mb-1">Cursos caros com promessas mirabolantes</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">A internet está cheia de cursos de R$ 500 cheios de termos complicados em inglês que não explicam o feijão com arroz que realmente funciona no dia a dia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SOLUTION & BENEFITS SECTION -->
+    <section class="bg-[#FAF8F5] py-12 px-5">
+      <div class="max-w-xl mx-auto">
+        <div class="bg-[#EBF8F7] p-6 rounded-2xl border-2 border-[#47C6C4] card-clean-shadow mb-10 text-center">
+          <h3 class="font-heading font-extrabold text-lg sm:text-xl text-[#202020] leading-snug">
+            Com apenas <span class="text-[#00A896]">1 a 2 horas por dia</span> nos intervalos da sua rotina, você conquista sua renda sem sair de perto dos seus filhos.
+          </h3>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="font-heading font-extrabold text-xl sm:text-2xl text-[#202020] mb-6">
+            O que você ganha aplicando os métodos deste acervo:
+          </h2>
+
+          <!-- Benefit 1 -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200/90 flex items-start gap-4 card-clean-shadow">
+            <div class="w-7 h-7 rounded-full bg-[#47C6C4]/20 text-[#00A896] font-extrabold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">✓</div>
+            <div>
+              <h3 class="font-heading font-bold text-base sm:text-lg text-[#202020] mb-1">Liberdade de horários e rotina no seu ritmo</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Trabalhe nos horários em que os filhos estão na escola ou na soneca da tarde. Você é a sua própria chefe e define o seu ritmo.</p>
+            </div>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200/90 flex items-start gap-4 card-clean-shadow">
+            <div class="w-7 h-7 rounded-full bg-[#47C6C4]/20 text-[#00A896] font-extrabold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">✓</div>
+            <div>
+              <h3 class="font-heading font-bold text-base sm:text-lg text-[#202020] mb-1">Comece com quase zero de investimento</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Modelos que utilizam utensílios que você já tem na cozinha, ferramentas gratuitas no celular e vendas sem precisar comprar estoque antecipado.</p>
+            </div>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200/90 flex items-start gap-4 card-clean-shadow">
+            <div class="w-7 h-7 rounded-full bg-[#47C6C4]/20 text-[#00A896] font-extrabold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">✓</div>
+            <div>
+              <h3 class="font-heading font-bold text-base sm:text-lg text-[#202020] mb-1">Mensagens prontas para copiar e colar</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Não sabe como oferecer ou o que falar? Cada método vem com scripts exatos de WhatsApp para mandar para amigas, vizinhas e clientes sem timidez.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DELIVERABLES & BUNDLE SECTION -->
+    <section class="bg-[#FFE5ED] py-12 px-5 border-t border-b border-[#F23870]/15">
+      <div class="max-w-xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#202020] leading-snug mb-4">
+            Você vai receber na hora no WhatsApp e E-mail:
+          </h2>
+          
+          <div class="bg-white/90 p-4 sm:p-5 rounded-2xl border border-[#F23870]/20 text-left max-w-md mx-auto card-clean-shadow">
+            <ul class="text-sm text-slate-700 space-y-2.5">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F23870] font-bold text-base leading-none mt-0.5">•</span>
+                <span><strong class="text-[#202020]">11 E-books Completos em PDF</strong> com 30 páginas cada <strong class="text-[#F23870] font-extrabold">(MAIS DE 330 PÁGINAS)</strong></span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F23870] font-bold text-base leading-none mt-0.5">•</span>
+                <span><strong class="text-[#202020]">110 Métodos de Renda</strong> explicados passo a passo de ponta a ponta</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F23870] font-bold text-base leading-none mt-0.5">•</span>
+                <span><strong class="text-[#202020]">Scripts e Mensagens Prontas</strong> para atrair e fechar com clientes</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F23870] font-bold text-base leading-none mt-0.5">•</span>
+                <span><strong class="text-[#202020]">Dicas de Ouro & Precificação</strong> para garantir lucro líquido no seu bolso</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#F23870] font-bold text-base leading-none mt-0.5">•</span>
+                <span>Acesso vitalício em pasta organizada no Google Drive</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Visual 3D Cards Preview with Alternating Animation -->
+        <div class="mb-10">
+          <h3 class="font-heading font-bold text-lg text-[#202020] mb-1.5 text-center">
+            Uma amostra dos volumes inclusos no seu acervo:
+          </h3>
+          <p class="text-center text-xs text-slate-500 mb-6">
+            ✨ Capas interativas: alternam automaticamente (toque para destacar)
+          </p>
+          
+          <div class="w-full max-w-lg mx-auto py-2 px-1">
+            <!-- Row 1: Volume 1 & Volume 2 -->
+            <div class="flex justify-center items-center relative card-pair">
+              <div class="w-[54%] max-w-[230px] relative cursor-pointer card-preview-item animate-swap-a transition-all duration-300">
+                <img src="assets/card1.png" alt="E-book de Alimentação e Marmitas" class="w-full h-auto object-contain rounded-2xl">
+              </div>
+              <div class="w-[54%] max-w-[230px] relative -ml-12 sm:-ml-16 cursor-pointer card-preview-item animate-swap-b transition-all duration-300">
+                <img src="assets/card2.png" alt="E-book de Redes Sociais e Digital" class="w-full h-auto object-contain rounded-2xl">
+              </div>
+            </div>
+
+            <!-- Row 2: Volume 3 & Volume 4 -->
+            <div class="flex justify-center items-center relative mt-6 sm:mt-8 card-pair">
+              <div class="w-[54%] max-w-[230px] relative cursor-pointer card-preview-item animate-swap-c transition-all duration-300">
+                <img src="assets/card3.png" alt="E-book de Marketplace e Shopee" class="w-full h-auto object-contain rounded-2xl">
+              </div>
+              <div class="w-[54%] max-w-[230px] relative -ml-12 sm:-ml-16 cursor-pointer card-preview-item animate-swap-d transition-all duration-300">
+                <img src="assets/card4.png" alt="E-book de Serviços e Artesanato" class="w-full h-auto object-contain rounded-2xl">
+              </div>
+            </div>
+          </div>
+
+          <p class="text-center text-xs font-bold text-[#F23870] mt-4">
+            + 7 Volumes adicionais completos cobrindo todos os nichos lucrativos para o lar!
+          </p>
+        </div>
+
+        <!-- Sample Pages Showcase Frame -->
+        <div class="bg-white p-3 sm:p-4 rounded-3xl border border-[#F23870]/20 card-clean-shadow overflow-hidden">
+          <img src="assets/amostra_paginas.jpg" alt="Amostra das páginas e métodos práticos do acervo" class="w-full h-auto object-cover rounded-2xl">
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. GUARANTEE SECTION -->
+    <section class="bg-[#EBF8F7] py-12 px-5 border-t border-b border-[#47C6C4]/30">
+      <div class="max-w-xl mx-auto text-center">
+        <div class="w-14 h-14 bg-[#47C6C4] text-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm">
+          <!-- Shield Check Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        </div>
+
+        <h2 class="font-heading text-2xl font-extrabold text-[#202020] mb-3 leading-snug">
+          Garantia Incondicional de 30 Dias
+        </h2>
+
+        <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-5">
+          Você tem um mês inteiro para ler e colocar em prática os métodos. Se achar que o conteúdo não é para você ou não ajudou na sua rotina, basta nos mandar uma mensagem. Devolvemos 100% do seu dinheiro sem letras miúdas.
+        </p>
+
+        <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-[#47C6C4]/40 text-xs font-bold text-[#202020]">
+          <!-- Lock Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00A896]"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <span>Compra 100% Segura & Risco Zero</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CHECKOUT & PRICING SECTION -->
+    <section id="checkout" class="bg-[#F23870] py-14 px-5 text-white">
+      <div class="max-w-xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+            Adquira o acervo completo hoje por um valor super acessível
+          </h2>
+        </div>
+
+        <div class="bg-[#FFFCF8] text-[#202020] rounded-2xl p-6 sm:p-8 shadow-2xl border-2 border-[#F23870]">
+          <div class="text-center pb-5 border-b border-slate-200 mb-5">
+            <span class="text-xs font-bold text-[#F23870] uppercase tracking-wider block mb-1">ACERVO COMPLETO DIGITAL</span>
+            <h3 class="font-heading text-2xl font-extrabold text-[#202020]">Renda Extra no Lar</h3>
+          </div>
+
+          <ul class="space-y-3 text-sm text-slate-700 mb-8">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00A896] flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span><strong class="text-[#202020]">11 E-books Completos em PDF (Mais de 330 páginas)</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00A896] flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span><strong class="text-[#202020]">110 Métodos de Renda Passo a Passo</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00A896] flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span><strong class="text-[#202020]">Envio imediato no seu WhatsApp e E-mail</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00A896] flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span><strong class="text-[#202020]">Garantia incondicional de 30 dias</strong></span>
+            </li>
+          </ul>
+
+          <div class="bg-[#FFE5ED] p-5 rounded-xl border border-[#F23870]/20 text-center mb-6">
+            <span class="text-xs text-slate-500 line-through block">De R$ 87,00</span>
+            <div class="flex items-baseline justify-center gap-1.5 my-1">
+              <span class="text-xs font-bold text-slate-600">Por apenas</span>
+              <span class="font-heading text-4xl sm:text-5xl font-extrabold text-[#F23870]">R$ 17,90</span>
+            </div>
+            <div class="inline-block mt-2 bg-[#F23870] text-white text-xs font-bold px-3 py-1 rounded-full shadow-xs">
+              ✨ Só 0,66 centavos por dia
+            </div>
+            <span class="text-xs text-slate-600 font-semibold block mt-2">Pagamento único • Sem assinaturas</span>
+          </div>
+
+          <!-- Checkout Link CTA Button -->
+          <a href="https://pay.wiapy.com/WppQYMt-B6oJ" class="block w-full btn-primary-yellow py-4 px-6 rounded-xl text-center cursor-pointer uppercase tracking-wide text-base sm:text-lg font-extrabold shadow-lg transition-all">
+            SIM! QUERO RECEBER AGORA
+          </a>
+
+          <div class="text-center mt-4 text-xs text-slate-500 font-medium flex items-center justify-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Pagamento seguro via PIX ou Cartão • Envio no WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ SECTION -->
+    <section class="bg-[#FAF8F5] py-12 px-5">
+      <div class="max-w-xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="font-heading text-2xl font-extrabold text-[#202020]">Perguntas Frequentes</h2>
+        </div>
+
+        <div class="space-y-3 mb-10" id="faq-container">
+          <!-- FAQ Item 1 -->
+          <div class="bg-white rounded-xl border border-slate-200/90 overflow-hidden card-clean-shadow faq-item">
+            <button class="w-full text-left p-4 sm:p-5 flex items-center justify-between font-heading font-bold text-sm sm:text-base text-[#202020] gap-3 cursor-pointer faq-toggle">
+              <span>Eu nunca vendi nada na vida. Esses métodos servem para mim?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#F23870] flex-shrink-0 faq-icon transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="px-4 sm:px-5 pb-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 hidden faq-content">
+              Sim! Todo o acervo foi escrito pensando em quem está começando do zero absoluto. A linguagem é simples, direta e prática, como se uma amiga estivesse te ensinando passo a passo, incluindo o que falar e como precificar.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="bg-white rounded-xl border border-slate-200/90 overflow-hidden card-clean-shadow faq-item">
+            <button class="w-full text-left p-4 sm:p-5 flex items-center justify-between font-heading font-bold text-sm sm:text-base text-[#202020] gap-3 cursor-pointer faq-toggle">
+              <span>Preciso ter computador ou muito dinheiro para começar?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 flex-shrink-0 faq-icon transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="px-4 sm:px-5 pb-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 hidden faq-content">
+              Não! A grande maioria dos métodos pode ser feita 100% pelo celular através de aplicativos gratuitos (como WhatsApp, Canva e redes sociais) ou aproveitando utensílios que você já possui na sua casa.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="bg-white rounded-xl border border-slate-200/90 overflow-hidden card-clean-shadow faq-item">
+            <button class="w-full text-left p-4 sm:p-5 flex items-center justify-between font-heading font-bold text-sm sm:text-base text-[#202020] gap-3 cursor-pointer faq-toggle">
+              <span>Como e por onde recebo os e-books após a compra?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 flex-shrink-0 faq-icon transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="px-4 sm:px-5 pb-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 hidden faq-content">
+              Assim que o pagamento for confirmado (no PIX a aprovação é imediata), você receberá o link exclusivo de acesso diretamente no seu WhatsApp e no seu e-mail cadastrado, podendo baixar e ler em qualquer aparelho.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="bg-white rounded-xl border border-slate-200/90 overflow-hidden card-clean-shadow faq-item">
+            <button class="w-full text-left p-4 sm:p-5 flex items-center justify-between font-heading font-bold text-sm sm:text-base text-[#202020] gap-3 cursor-pointer faq-toggle">
+              <span>O pagamento é mensal ou taxa única?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 flex-shrink-0 faq-icon transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="px-4 sm:px-5 pb-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 hidden faq-content">
+              É um pagamento único de apenas R$ 17,90. Não há nenhuma cobrança mensal, assinatura ou taxa escondida. O acesso ao material completo é vitalício.
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="bg-white rounded-xl border border-slate-200/90 overflow-hidden card-clean-shadow faq-item">
+            <button class="w-full text-left p-4 sm:p-5 flex items-center justify-between font-heading font-bold text-sm sm:text-base text-[#202020] gap-3 cursor-pointer faq-toggle">
+              <span>Como funciona a garantia de 30 dias?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 flex-shrink-0 faq-icon transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="px-4 sm:px-5 pb-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100 hidden faq-content">
+              Você pode testar o material durante 30 dias. Se não achar que valeu a pena, basta enviar um e-mail e reembolsaremos 100% do valor.
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Final CTA Button -->
+        <div class="pt-2">
+          <a href="https://pay.wiapy.com/WppQYMt-B6oJ" class="block w-full btn-primary-yellow py-4 px-6 rounded-xl text-center cursor-pointer uppercase tracking-wide text-base sm:text-lg font-extrabold shadow-lg transition-all">
+            SIM! QUERO RECEBER AGORA
+          </a>
+          <p class="text-center text-xs text-slate-500 font-medium mt-2">
+            Envio imediato no seu WhatsApp e e-mail • Garantia de 30 dias
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="bg-[#202020] text-slate-400 py-10 px-5 text-center text-xs border-t border-slate-800">
+      <div class="max-w-xl mx-auto space-y-3">
+        <p class="font-heading font-bold text-white text-base">
+          Acervo Renda Extra no Lar
+        </p>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          11 e-books práticos e 110 métodos validados para mulheres conquistarem independência financeira sem sair de casa.
+        </p>
+        <p class="text-xs text-slate-500 pt-3 border-t border-slate-800">
+          Produto digital. Compra 100% segura. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Interactive FAQ Accordion Script -->
+    <script>
+      document.querySelectorAll('.faq-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+          const item = button.parentElement;
+          const content = item.querySelector('.faq-content');
+          const icon = item.querySelector('.faq-icon');
+          
+          const isOpen = !content.classList.contains('hidden');
+          
+          // Close all FAQs
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          document.querySelectorAll('.faq-icon').forEach(i => {
+            i.style.transform = 'rotate(0deg)';
+            i.classList.remove('text-[#F23870]');
+            i.classList.add('text-slate-400');
+          });
+          
+          // Open clicked one if it was closed
+          if (!isOpen) {
+            content.classList.remove('hidden');
+            icon.style.transform = 'rotate(180deg)';
+            icon.classList.remove('text-slate-400');
+            icon.classList.add('text-[#F23870]');
+          }
+        });
+      });
+
+      // Auto-open first FAQ item
+      const firstFaq = document.querySelector('.faq-item');
+      if (firstFaq) {
+        firstFaq.querySelector('.faq-content').classList.remove('hidden');
+        const firstIcon = firstFaq.querySelector('.faq-icon');
+        firstIcon.style.transform = 'rotate(180deg)';
+        firstIcon.classList.remove('text-slate-400');
+        firstIcon.classList.add('text-[#F23870]');
+      }
+
+      // Alternating cards interactive tap / click to focus
+      document.querySelectorAll('.card-pair').forEach(pair => {
+        const cards = pair.querySelectorAll('.card-preview-item');
+        cards.forEach(card => {
+          card.addEventListener('click', (e) => {
+            const isAlreadyActive = card.classList.contains('active-front');
+            cards.forEach(c => c.classList.remove('active-front'));
+            if (!isAlreadyActive) {
+              card.classList.add('active-front');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
